@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ideas = ['Sci Fi Short Story', 'Quick Collage Exercises', 'Write a Book', 'Learn to Program']
+ideas.each{|idea| Idea.create(name: idea, description: "Hey, I'm an idea! #{idea}.")}
