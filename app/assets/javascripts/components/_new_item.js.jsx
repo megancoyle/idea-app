@@ -2,15 +2,7 @@ const NewIdea = props => {
   let formFields = {};
 
   return (
-    <form
-      onSubmit={e => {
-        props.handleFormSubmit(
-          formFields.name.value,
-          formFields.description.value
-        );
-        e.target.removeEventListener();
-      }}
-    >
+    <div>
       <input
         ref={input => (formFields.name = input)}
         placeholder="Enter the name of the item"
@@ -19,7 +11,16 @@ const NewIdea = props => {
         ref={input => (formFields.description = input)}
         placeholder="Enter a description"
       />
-      <button>Submit</button>
-    </form>
+      <button
+        onClick={() =>
+          props.handleFormSubmit(
+            formFields.name.value,
+            formFields.description.value
+          )
+        }
+      >
+        Submit
+      </button>
+    </div>
   );
 };
